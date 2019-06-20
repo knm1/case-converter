@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   <meta name="author" content="Jawira Portugal">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Welcome to MkDocs - Case Converter</title>
+  <title>Home - Case Converter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Welcome to MkDocs";
+    var mkdocs_page_name = "Home";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = null;
   </script>
@@ -50,21 +50,40 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href="index.html">Welcome to MkDocs</a>
+    <a class="current" href="index.html">Home</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
+    <li class="toctree-l2"><a href="#case-converter">Case converter</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#commands">Commands</a></li>
+            <li><a class="toctree-l3" href="#usage">Usage</a></li>
         
-            <li><a class="toctree-l3" href="#project-layout">Project layout</a></li>
+            <li><a class="toctree-l3" href="#supported-naming-conventions">Supported naming conventions</a></li>
+        
+            <li><a class="toctree-l3" href="#utility-methods">Utility methods</a></li>
+        
+            <li><a class="toctree-l3" href="#i18n">i18n</a></li>
+        
+            <li><a class="toctree-l3" href="#notes">Notes</a></li>
+        
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#full-example">Full example</a></li>
+        
+            <li><a class="toctree-l3" href="#contributing">Contributing</a></li>
+        
+            <li><a class="toctree-l3" href="#license">License</a></li>
         
         </ul>
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="contributing.html">Contributing</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -80,6 +99,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="known-issues.html">Known issues</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="license.html">License</a>
 	    </li>
           
         </ul>
@@ -104,7 +128,7 @@
     
       
     
-    <li>Welcome to MkDocs</li>
+    <li>Home</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/jawira/case-converter/edit/master/docs/index.md"
@@ -117,21 +141,205 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="case-converter">Case converter</h1>
+<p>Use this library to convert string between:</p>
+<ol>
+<li>🐪 Camel case</li>
+<li>🐍 Snake case</li>
+<li>👨‍🏫 Pascal case</li>
+<li>👩‍🏫 Ada case</li>
+<li>Ⓜ️ Macro case</li>
+<li>🥙 Kebab case</li>
+<li>🚆 Train case</li>
+<li>🏦 Cobol case</li>
+<li>🔠 Upper case</li>
+<li>🔡 Lower case</li>
+<li>📰 Title case</li>
+<li>✍️ Sentence case</li>
+</ol>
+<p>Features:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
+<li>🔁 automatic case detection</li>
+<li>🌐 i18n</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<p><a href="https://packagist.org/packages/jawira/case-converter"><img alt="Latest Stable Version" src="https://poser.pugx.org/jawira/case-converter/v/stable" /></a>
+<a href="https://packagist.org/packages/jawira/case-converter"><img alt="PHP from Packagist" src="https://img.shields.io/packagist/php-v/jawira/case-converter.svg" /></a>
+<a href="https://www.travis-ci.org/jawira/case-converter"><img alt="Build Status" src="https://www.travis-ci.org/jawira/case-converter.svg?branch=master" /></a>
+<a href="https://codeclimate.com/github/jawira/case-converter/maintainability"><img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/35677f6ce7dac27a5d0c/maintainability" /></a>
+<a href="https://codeclimate.com/github/jawira/case-converter/test_coverage"><img alt="Test Coverage" src="https://api.codeclimate.com/v1/badges/35677f6ce7dac27a5d0c/test_coverage" /></a>
+<a href="https://packagist.org/packages/jawira/case-converter"><img alt="Total Downloads" src="https://poser.pugx.org/jawira/case-converter/downloads" /></a>
+<a href="https://packagist.org/packages/jawira/case-converter"><img alt="Monthly Downloads" src="https://poser.pugx.org/jawira/case-converter/d/monthly" /></a>
+<a href="https://packagist.org/packages/jawira/case-converter"><img alt="Daily Downloads" src="https://poser.pugx.org/jawira/case-converter/d/daily" /></a>
+<a href="http://phppackages.org/p/jawira/case-converter"><img alt="PHPPackages Rank" src="http://phppackages.org/p/jawira/case-converter/badge/rank.svg" /></a>
+<a href="http://phppackages.org/p/jawira/case-converter"><img alt="PHPPackages Referenced By" src="http://phppackages.org/p/jawira/case-converter/badge/referenced-by.svg" /></a>
+<a href="https://packagist.org/packages/jawira/case-converter"><img alt="License" src="https://poser.pugx.org/jawira/case-converter/license" /></a>
+<a href="https://packagist.org/packages/jawira/case-converter"><img alt="composer.lock" src="https://poser.pugx.org/jawira/case-converter/composerlock" /></a>
+<a href="https://github.com/php-pds/skeleton"><img alt="PDS Skeleton" src="https://img.shields.io/badge/pds-skeleton-blue.svg" /></a>
+<a href="https://huboard.com/jawira/case-converter"><img alt="Issues" src="https://img.shields.io/github/issues/jawira/case-converter.svg?label=HuBoard&amp;color=694DC2" /></a></p>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>
+<p>Instantiate <code>Convert</code> class with the string to transform:</p>
+<p><code>php
+$son = new Convert('john-connor');</code></p>
+<p>Note: Input string (i.e. <em>john-connor</em>) format is going to be detected
+automatically.</p>
+</li>
+<li>
+<p>Then use the right method to convert the string accordingly to your needs:</p>
+<p><code>php
+echo $son-&gt;toCamel();   // output: johnConnor
+echo $son-&gt;toSnake();   // output: john_connor</code></p>
+</li>
+</ol>
+<h2 id="supported-naming-conventions">Supported naming conventions</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Output example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>toCamel()</code></td>
+<td>Camel case</td>
+<td><code>myNameIsBond</code></td>
+</tr>
+<tr>
+<td><code>toPascal()</code></td>
+<td>Pascal case</td>
+<td><code>MyNameIsBond</code></td>
+</tr>
+<tr>
+<td><code>toKebab()</code></td>
+<td>Kebab case</td>
+<td><code>my-name-is-bond</code></td>
+</tr>
+<tr>
+<td><code>toTrain()</code></td>
+<td>Train case</td>
+<td><code>My-Name-Is-Bond</code></td>
+</tr>
+<tr>
+<td><code>toCobol()</code></td>
+<td>Cobol case</td>
+<td><code>MY-NAME-IS-BOND</code></td>
+</tr>
+<tr>
+<td><code>toSnake()</code></td>
+<td>Snake case</td>
+<td><code>my_name_is_bond</code></td>
+</tr>
+<tr>
+<td><code>toAda()</code></td>
+<td>Ada case</td>
+<td><code>My_Name_Is_Bond</code></td>
+</tr>
+<tr>
+<td><code>toMacro()</code></td>
+<td>Macro case</td>
+<td><code>MY_NAME_IS_BOND</code></td>
+</tr>
+<tr>
+<td><code>toUpper()</code></td>
+<td>Upper case</td>
+<td><code>MY NAME IS BOND</code></td>
+</tr>
+<tr>
+<td><code>toLower()</code></td>
+<td>Lower case</td>
+<td><code>my name is bond</code></td>
+</tr>
+<tr>
+<td><code>toTitle()</code></td>
+<td>Title case</td>
+<td><code>My Name Is Bond</code></td>
+</tr>
+<tr>
+<td><code>toSentence()</code></td>
+<td>Sentence case</td>
+<td><code>My name is bond</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="utility-methods">Utility methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Output example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>toArray()</code></td>
+<td>Get array with detected words</td>
+<td><code>['my', 'name', 'is', 'bond']</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="i18n">i18n</h2>
+<p>Fully compatible with non-english alphabets:</p>
+<pre><code class="php">// Spanish
+$esp = new Convert('DON_RAMÓN_Y_ÑOÑO');
+echo $esp-&gt;toCamel();   // output: donRamónYÑoño
+
+// Greek
+$grc = new Convert('πολύ-Καλό');
+echo $grc-&gt;toCamel();   // output: πολύΚαλό
+
+// Russian
+$rus = new Convert('ОЧЕНЬ_ПРИЯТНО');
+echo $rus-&gt;toCamel();   // output: оченьПриятно
 </code></pre>
+
+<h2 id="notes">Notes</h2>
+<ul>
+<li>You must use <em>UTF-8</em> encoding.</li>
+<li>Magic function <code>__toString</code> will always print string in <em>Camel case</em> format.</li>
+<li>Input strings are not supposed to have numbers in it. If you need to handle
+  numbers then please <a href="https://github.com/jawira/case-converter/issues/new">open an issue</a>.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Install using Composer:</p>
+<pre><code class="console">composer require jawira/case-converter
+</code></pre>
+
+<p>Then import <code>Convert</code> class into your code:</p>
+<pre><code class="php">&lt;?php
+use Jawira\CaseConverter\Convert;
+</code></pre>
+
+<h2 id="full-example">Full example</h2>
+<pre><code class="php">&lt;?php declare(strict_types=1);
+
+namespace Demo;
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Jawira\CaseConverter\Convert;
+
+$robot = new Convert('The-Terminator');
+
+echo $robot-&gt;toPascal() . PHP_EOL;
+echo $robot-&gt;toCobol() . PHP_EOL;
+</code></pre>
+
+<p>Output:</p>
+<pre><code class="text">TheTerminator
+THE-TERMINATOR
+</code></pre>
+
+<h2 id="contributing">Contributing</h2>
+<p>Pull requests are welcome, please <a href="https://github.com/jawira/case-converter/issues/new">open an issue</a> before committing.</p>
+<p>Good development practices are described in <a href="https://github.com/jawira/case-converter/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>, you are not
+required to follow these rules.</p>
+<h2 id="license">License</h2>
+<p>This library is licensed under the <a href="https://github.com/jawira/case-converter/blob/master/LICENSE.md">MIT LICENSE</a>.</p>
+<!--mkdocs: Do not use relative path for links and images-->
               
             </div>
           </div>
@@ -139,7 +347,7 @@ docs/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="detection-algorithm.html" class="btn btn-neutral float-right" title="Detection algorithm">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -171,7 +379,7 @@ docs/
       
       
       
-        <span style="margin-left: 15px"><a href="detection-algorithm.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="contributing.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -184,5 +392,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-20 19:25:53
+Build Date UTC : 2019-06-20 19:56:00
 -->
