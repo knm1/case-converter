@@ -59,17 +59,11 @@
         
             <li><a class="toctree-l3" href="#usage">Usage</a></li>
         
-            <li><a class="toctree-l3" href="#supported-naming-conventions">Supported naming conventions</a></li>
-        
             <li><a class="toctree-l3" href="#utility-methods">Utility methods</a></li>
         
             <li><a class="toctree-l3" href="#i18n">i18n</a></li>
         
-            <li><a class="toctree-l3" href="#notes">Notes</a></li>
-        
             <li><a class="toctree-l3" href="#installation">Installation</a></li>
-        
-            <li><a class="toctree-l3" href="#full-example">Full example</a></li>
         
             <li><a class="toctree-l3" href="#documentation">Documentation</a></li>
         
@@ -94,6 +88,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="dev.html">Dev</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="full-example.html">Full example</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -140,20 +139,77 @@
               
                 <h1 id="case-converter">Case converter</h1>
 <p>Use this library to convert string between:</p>
-<ol>
-<li>🐪 Camel case</li>
-<li>🐍 Snake case</li>
-<li>👨‍🏫 Pascal case</li>
-<li>👩‍🏫 Ada case</li>
-<li>Ⓜ️ Macro case</li>
-<li>🥙 Kebab case</li>
-<li>🚆 Train case</li>
-<li>🏦 Cobol case</li>
-<li>🔠 Upper case</li>
-<li>🔡 Lower case</li>
-<li>📰 Title case</li>
-<li>✍️ Sentence case</li>
-</ol>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Method</th>
+<th>Output example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🐪 Camel case</td>
+<td><code>toCamel()</code></td>
+<td><code>myNameIsBond</code></td>
+</tr>
+<tr>
+<td>👨‍🏫 Pascal case</td>
+<td><code>toPascal()</code></td>
+<td><code>MyNameIsBond</code></td>
+</tr>
+<tr>
+<td>🐍 Snake case</td>
+<td><code>toSnake()</code></td>
+<td><code>my_name_is_bond</code></td>
+</tr>
+<tr>
+<td>👩‍🏫 Ada case</td>
+<td><code>toAda()</code></td>
+<td><code>My_Name_Is_Bond</code></td>
+</tr>
+<tr>
+<td>Ⓜ️ Macro case</td>
+<td><code>toMacro()</code></td>
+<td><code>MY_NAME_IS_BOND</code></td>
+</tr>
+<tr>
+<td>🥙 Kebab case</td>
+<td><code>toKebab()</code></td>
+<td><code>my-name-is-bond</code></td>
+</tr>
+<tr>
+<td>🚂 Train case</td>
+<td><code>toTrain()</code></td>
+<td><code>My-Name-Is-Bond</code></td>
+</tr>
+<tr>
+<td>🏦 Cobol case</td>
+<td><code>toCobol()</code></td>
+<td><code>MY-NAME-IS-BOND</code></td>
+</tr>
+<tr>
+<td>🔡 Lower case</td>
+<td><code>toLower()</code></td>
+<td><code>my name is bond</code></td>
+</tr>
+<tr>
+<td>🔠 Upper case</td>
+<td><code>toUpper()</code></td>
+<td><code>MY NAME IS BOND</code></td>
+</tr>
+<tr>
+<td>📰 Title case</td>
+<td><code>toTitle()</code></td>
+<td><code>My Name Is Bond</code></td>
+</tr>
+<tr>
+<td>✍️ Sentence case</td>
+<td><code>toSentence()</code></td>
+<td><code>My name is bond</code></td>
+</tr>
+</tbody>
+</table>
 <p>Features:</p>
 <ul>
 <li>🔁 automatic case detection</li>
@@ -189,78 +245,6 @@ echo $son-&gt;toCamel();   // output: johnConnor
 echo $son-&gt;toSnake();   // output: john_connor</code></p>
 </li>
 </ol>
-<h2 id="supported-naming-conventions">Supported naming conventions</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-<th>Output example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>toCamel()</code></td>
-<td>Camel case</td>
-<td><code>myNameIsBond</code></td>
-</tr>
-<tr>
-<td><code>toPascal()</code></td>
-<td>Pascal case</td>
-<td><code>MyNameIsBond</code></td>
-</tr>
-<tr>
-<td><code>toKebab()</code></td>
-<td>Kebab case</td>
-<td><code>my-name-is-bond</code></td>
-</tr>
-<tr>
-<td><code>toTrain()</code></td>
-<td>Train case</td>
-<td><code>My-Name-Is-Bond</code></td>
-</tr>
-<tr>
-<td><code>toCobol()</code></td>
-<td>Cobol case</td>
-<td><code>MY-NAME-IS-BOND</code></td>
-</tr>
-<tr>
-<td><code>toSnake()</code></td>
-<td>Snake case</td>
-<td><code>my_name_is_bond</code></td>
-</tr>
-<tr>
-<td><code>toAda()</code></td>
-<td>Ada case</td>
-<td><code>My_Name_Is_Bond</code></td>
-</tr>
-<tr>
-<td><code>toMacro()</code></td>
-<td>Macro case</td>
-<td><code>MY_NAME_IS_BOND</code></td>
-</tr>
-<tr>
-<td><code>toUpper()</code></td>
-<td>Upper case</td>
-<td><code>MY NAME IS BOND</code></td>
-</tr>
-<tr>
-<td><code>toLower()</code></td>
-<td>Lower case</td>
-<td><code>my name is bond</code></td>
-</tr>
-<tr>
-<td><code>toTitle()</code></td>
-<td>Title case</td>
-<td><code>My Name Is Bond</code></td>
-</tr>
-<tr>
-<td><code>toSentence()</code></td>
-<td>Sentence case</td>
-<td><code>My name is bond</code></td>
-</tr>
-</tbody>
-</table>
 <h2 id="utility-methods">Utility methods</h2>
 <table>
 <thead>
@@ -293,13 +277,6 @@ $rus = new Convert('ОЧЕНЬ_ПРИЯТНО');
 echo $rus-&gt;toCamel();   // output: оченьПриятно
 </code></pre>
 
-<h2 id="notes">Notes</h2>
-<ul>
-<li>You must use <em>UTF-8</em> encoding.</li>
-<li>Magic function <code>__toString</code> will always print string in <em>Camel case</em> format.</li>
-<li>Input strings are not supposed to have numbers in it. If you need to handle
-  numbers then please <a href="https://github.com/jawira/case-converter/issues/new">open an issue</a>.</li>
-</ul>
 <h2 id="installation">Installation</h2>
 <p>Install using Composer:</p>
 <pre><code class="console">composer require jawira/case-converter
@@ -308,26 +285,6 @@ echo $rus-&gt;toCamel();   // output: оченьПриятно
 <p>Then import <code>Convert</code> class into your code:</p>
 <pre><code class="php">&lt;?php
 use Jawira\CaseConverter\Convert;
-</code></pre>
-
-<h2 id="full-example">Full example</h2>
-<pre><code class="php">&lt;?php declare(strict_types=1);
-
-namespace Demo;
-
-require __DIR__ . '/vendor/autoload.php';
-
-use Jawira\CaseConverter\Convert;
-
-$robot = new Convert('The-Terminator');
-
-echo $robot-&gt;toPascal() . PHP_EOL;
-echo $robot-&gt;toCobol() . PHP_EOL;
-</code></pre>
-
-<p>Output:</p>
-<pre><code class="text">TheTerminator
-THE-TERMINATOR
 </code></pre>
 
 <h2 id="documentation">Documentation</h2>
@@ -385,5 +342,5 @@ THE-TERMINATOR
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-20 20:22:55
+Build Date UTC : 2019-06-22 09:06:20
 -->

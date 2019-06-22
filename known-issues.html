@@ -68,6 +68,11 @@
     <a class="" href="dev.html">Dev</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="full-example.html">Full example</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
     <a class="current" href="known-issues.html">Known issues</a>
@@ -78,6 +83,8 @@
         <ul>
         
             <li><a class="toctree-l3" href="#number-handling">Number handling</a></li>
+        
+            <li><a class="toctree-l3" href="#full-case-mapping">Full case-mapping</a></li>
         
         </ul>
     
@@ -130,6 +137,15 @@ this means that a number is not considered as a word: </p>
 <p>As shown in the previous example, there is no way to go back to the original 
 input string (i.e. <code>hello-8-world</code>), in <em>kebab case</em> this sting is written as 
 <code>hello8-world</code>.  </p>
+<h2 id="full-case-mapping">Full case-mapping</h2>
+<p>PHP 7.3 introduced <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">full case-mapping</a>, in practice this means than you can 
+have different results depending on your PHP version.</p>
+<pre><code class="php">$german = new Convert('Straße');
+
+echo $german-&gt;toUpper();
+// Produces STRAßE on PHP 7.2
+// Produces STRASSE on PHP 7.3
+</code></pre>
               
             </div>
           </div>
@@ -140,7 +156,7 @@ input string (i.e. <code>hello-8-world</code>), in <em>kebab case</em> this stin
         <a href="license.html" class="btn btn-neutral float-right" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="dev.html" class="btn btn-neutral" title="Dev"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="full-example.html" class="btn btn-neutral" title="Full example"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -168,7 +184,7 @@ input string (i.e. <code>hello-8-world</code>), in <em>kebab case</em> this stin
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="dev.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="full-example.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="license.html" style="color: #fcfcfc">Next &raquo;</a></span>
