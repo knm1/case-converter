@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jawira Portugal">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Full example - Case Converter</title>
+  <title>Examples - Case Converter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Full example";
-    var mkdocs_page_input_path = "full-example.md";
+    var mkdocs_page_name = "Examples";
+    var mkdocs_page_input_path = "examples.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -70,10 +70,18 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href="full-example.html">Full example</a>
+    <a class="current" href="examples.html">Examples</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#full-example">Full example</a></li>
+    <li class="toctree-l2"><a href="#examples">Examples</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#basic-usage">Basic usage</a></li>
+        
+            <li><a class="toctree-l3" href="#explicit-case-detection">Explicit case detection</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -111,7 +119,7 @@
     
       
     
-    <li>Full example</li>
+    <li>Examples</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -121,10 +129,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="full-example">Full example</h1>
+                <h1 id="examples">Examples</h1>
+<h2 id="basic-usage">Basic usage</h2>
+<p>Code:</p>
 <pre><code class="php">&lt;?php declare(strict_types=1);
-
-namespace Demo;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -134,11 +142,45 @@ $robot = new Convert('The-Terminator');
 
 echo $robot-&gt;toPascal() . PHP_EOL;
 echo $robot-&gt;toCobol() . PHP_EOL;
+echo $robot-&gt;toSnake() . PHP_EOL;
 </code></pre>
 
 <p>Output:</p>
 <pre><code class="text">TheTerminator
 THE-TERMINATOR
+the_terminator
+</code></pre>
+
+<h2 id="explicit-case-detection">Explicit case detection</h2>
+<p>Code:</p>
+<pre><code class="php">&lt;?php declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Jawira\CaseConverter\Convert;
+
+$agency = new Convert('FBI');
+
+echo $agency-&gt;fromAda()
+            -&gt;toCobol() . PHP_EOL;   // output: FBI
+echo $agency-&gt;toSnake() . PHP_EOL;   // output: fbi
+
+echo $agency-&gt;fromCamel()
+            -&gt;toCobol() . PHP_EOL;   // output: F-B-I
+echo $agency-&gt;toSnake() . PHP_EOL;   // output: f_b_i
+
+echo $agency-&gt;fromAuto()
+            -&gt;toCobol() . PHP_EOL;   // output: FBI
+echo $agency-&gt;toSnake() . PHP_EOL;   // output: fbi
+</code></pre>
+
+<p>Output:</p>
+<pre><code>FBI
+fbi
+F-B-I
+f_b_i
+FBI
+fbi
 </code></pre>
               
             </div>
@@ -160,7 +202,7 @@ THE-TERMINATOR
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>MIT</p>
+      <p>The MIT License (MIT)</p>
     
   </div>
 

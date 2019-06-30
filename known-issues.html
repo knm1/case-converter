@@ -70,7 +70,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="full-example.html">Full example</a>
+    <a class="" href="examples.html">Examples</a>
 	    </li>
           
             <li class="toctree-l1 current">
@@ -146,6 +146,23 @@ echo $german-&gt;toUpper();
 // Produces STRAßE on PHP 7.2
 // Produces STRASSE on PHP 7.3
 </code></pre>
+
+<p>Internally <code>Case-Converter</code> uses <a href="https://www.php.net/manual/en/function.mb-convert-case.php">mb_convert_case()</a>, this function uses the 
+following constants:</p>
+<ul>
+<li>MB_CASE_LOWER</li>
+<li>MB_CASE_TITLE</li>
+<li>MB_CASE_UPPER</li>
+</ul>
+<p>The problem is that, Before <em>PHP 7.3</em>, these constants perform simple 
+case-mapping and after <em>PHP 7.3</em> perform full case-mapping.</p>
+<p>If you want to maintain the old functionality after <em>PHP 7.3</em>, then you have to 
+use <code>MB_CASE_LOWER_SIMPLE</code>, <code>MB_CASE_UPPER_SIMPLE</code>, and <code>MB_CASE_TITLE_SIMPLE</code>. 
+Of course these variables doesnt exist yet before <em>PHP 7.3</em>.</p>
+<p>IMHO this is a <em>breaking change</em>, PHP people should have keep untouched old 
+constants and create new ones for <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">full case-mapping</a>, for example: 
+<code>MB_CASE_LOWER_FULL</code>, <code>MB_CASE_TITLE_FULL</code>, and <code>MB_CASE_UPPER_FULL</code> (please 
+note these variables do not exist). </p>
               
             </div>
           </div>
@@ -156,7 +173,7 @@ echo $german-&gt;toUpper();
         <a href="license.html" class="btn btn-neutral float-right" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="full-example.html" class="btn btn-neutral" title="Full example"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral" title="Examples"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -166,7 +183,7 @@ echo $german-&gt;toUpper();
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>MIT</p>
+      <p>The MIT License (MIT)</p>
     
   </div>
 
@@ -184,7 +201,7 @@ echo $german-&gt;toUpper();
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="full-example.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="examples.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="license.html" style="color: #fcfcfc">Next &raquo;</a></span>

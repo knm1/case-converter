@@ -57,13 +57,15 @@
     
         <ul>
         
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
             <li><a class="toctree-l3" href="#usage">Usage</a></li>
+        
+            <li><a class="toctree-l3" href="#explicit-case-detection">Explicit case detection</a></li>
         
             <li><a class="toctree-l3" href="#utility-methods">Utility methods</a></li>
         
             <li><a class="toctree-l3" href="#i18n">i18n</a></li>
-        
-            <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
             <li><a class="toctree-l3" href="#documentation">Documentation</a></li>
         
@@ -92,7 +94,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="full-example.html">Full example</a>
+    <a class="" href="examples.html">Examples</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -229,22 +231,83 @@
 <a href="https://packagist.org/packages/jawira/case-converter"><img alt="composer.lock" src="https://poser.pugx.org/jawira/case-converter/composerlock" /></a>
 <a href="https://github.com/php-pds/skeleton"><img alt="PDS Skeleton" src="https://img.shields.io/badge/pds-skeleton-blue.svg" /></a>
 <a href="https://huboard.com/jawira/case-converter"><img alt="Issues" src="https://img.shields.io/github/issues/jawira/case-converter.svg?label=HuBoard&amp;color=694DC2" /></a></p>
+<h2 id="installation">Installation</h2>
+<pre><code class="console">$ composer require jawira/case-converter
+</code></pre>
+
 <h2 id="usage">Usage</h2>
-<ol>
-<li>
-<p>Instantiate <code>Convert</code> class with the string to transform:</p>
-<p><code>php
-$son = new Convert('john-connor');</code></p>
-<p>Note: Input string (i.e. <em>john-connor</em>) format is going to be detected
-automatically.</p>
-</li>
-<li>
-<p>Then use the right method to convert the string accordingly to your needs:</p>
-<p><code>php
-echo $son-&gt;toCamel();   // output: johnConnor
-echo $son-&gt;toSnake();   // output: john_connor</code></p>
-</li>
-</ol>
+<pre><code class="php">use Jawira\CaseConverter\Convert;
+
+$hero = new Convert('john-connor');
+
+echo $hero-&gt;toCamel();   // output: johnConnor
+echo $hero-&gt;toSnake();   // output: john_connor
+</code></pre>
+
+<p>Note: Input string (i.e. <em>john-connor</em>) format is going to be detected automatically.</p>
+<h2 id="explicit-case-detection">Explicit case detection</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fromAuto()</code></td>
+<td>(default) Auto-detect naming convention</td>
+</tr>
+<tr>
+<td><code>fromCamel()</code></td>
+<td>Split input string using uppercase characters</td>
+</tr>
+<tr>
+<td><code>fromPascal()</code></td>
+<td>Split input string using uppercase characters</td>
+</tr>
+<tr>
+<td><code>fromSnake()</code></td>
+<td>Split input string using <code>_</code> (underscore character)</td>
+</tr>
+<tr>
+<td><code>fromAda()</code></td>
+<td>Split input string using <code>_</code> (underscore character)</td>
+</tr>
+<tr>
+<td><code>fromMacro()</code></td>
+<td>Split input string using <code>_</code> (underscore character)</td>
+</tr>
+<tr>
+<td><code>fromKebab()</code></td>
+<td>Split input string using <code>-</code> (dash character)</td>
+</tr>
+<tr>
+<td><code>fromTrain()</code></td>
+<td>Split input string using <code>-</code> (dash character)</td>
+</tr>
+<tr>
+<td><code>fromCobol()</code></td>
+<td>Split input string using <code>-</code> (dash character)</td>
+</tr>
+<tr>
+<td><code>fromLower()</code></td>
+<td>Split input string using <code>␣</code> (space character)</td>
+</tr>
+<tr>
+<td><code>fromUpper()</code></td>
+<td>Split input string using <code>␣</code> (space character)</td>
+</tr>
+<tr>
+<td><code>fromTitle()</code></td>
+<td>Split input string using <code>␣</code> (space character)</td>
+</tr>
+<tr>
+<td><code>fromSentence()</code></td>
+<td>Split input string using <code>␣</code> (space character)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="utility-methods">Utility methods</h2>
 <table>
 <thead>
@@ -277,16 +340,6 @@ $rus = new Convert('ОЧЕНЬ_ПРИЯТНО');
 echo $rus-&gt;toCamel();   // output: оченьПриятно
 </code></pre>
 
-<h2 id="installation">Installation</h2>
-<p>Install using Composer:</p>
-<pre><code class="console">composer require jawira/case-converter
-</code></pre>
-
-<p>Then import <code>Convert</code> class into your code:</p>
-<pre><code class="php">&lt;?php
-use Jawira\CaseConverter\Convert;
-</code></pre>
-
 <h2 id="documentation">Documentation</h2>
 <p><a href="https://jawira.github.io/case-converter/">https://jawira.github.io/case-converter/</a></p>
 <h2 id="license">License</h2>
@@ -310,7 +363,7 @@ use Jawira\CaseConverter\Convert;
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>MIT</p>
+      <p>The MIT License (MIT)</p>
     
   </div>
 
@@ -342,5 +395,5 @@ use Jawira\CaseConverter\Convert;
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-22 09:06:20
+Build Date UTC : 2019-06-30 21:07:01
 -->
