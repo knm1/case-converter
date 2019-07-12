@@ -57,15 +57,11 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#installation">Installation</a></li>
-        
             <li><a class="toctree-l3" href="#usage">Usage</a></li>
         
-            <li><a class="toctree-l3" href="#explicit-case-detection">Explicit case detection</a></li>
-        
-            <li><a class="toctree-l3" href="#utility-methods">Utility methods</a></li>
-        
             <li><a class="toctree-l3" href="#i18n">i18n</a></li>
+        
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
             <li><a class="toctree-l3" href="#documentation">Documentation</a></li>
         
@@ -75,6 +71,16 @@
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="api.html">Api</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="changelog.html">Changelog</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -105,6 +111,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="license.html">License</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="naming-conventions.html">Naming conventions</a>
 	    </li>
           
         </ul>
@@ -231,10 +242,6 @@
 <a href="https://packagist.org/packages/jawira/case-converter"><img alt="composer.lock" src="https://poser.pugx.org/jawira/case-converter/composerlock" /></a>
 <a href="https://github.com/php-pds/skeleton"><img alt="PDS Skeleton" src="https://img.shields.io/badge/pds-skeleton-blue.svg" /></a>
 <a href="https://huboard.com/jawira/case-converter"><img alt="Issues" src="https://img.shields.io/github/issues/jawira/case-converter.svg?label=HuBoard&amp;color=694DC2" /></a></p>
-<h2 id="installation">Installation</h2>
-<pre><code class="console">$ composer require jawira/case-converter
-</code></pre>
-
 <h2 id="usage">Usage</h2>
 <pre><code class="php">use Jawira\CaseConverter\Convert;
 
@@ -245,86 +252,7 @@ echo $hero-&gt;toSnake();   // output: john_connor
 </code></pre>
 
 <p>Note: Input string (i.e. <em>john-connor</em>) format is going to be detected automatically.</p>
-<h2 id="explicit-case-detection">Explicit case detection</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>fromAuto()</code></td>
-<td>(default) Auto-detect naming convention</td>
-</tr>
-<tr>
-<td><code>fromCamel()</code></td>
-<td>Split input string using uppercase characters</td>
-</tr>
-<tr>
-<td><code>fromPascal()</code></td>
-<td>Split input string using uppercase characters</td>
-</tr>
-<tr>
-<td><code>fromSnake()</code></td>
-<td>Split input string using <code>_</code> (underscore character)</td>
-</tr>
-<tr>
-<td><code>fromAda()</code></td>
-<td>Split input string using <code>_</code> (underscore character)</td>
-</tr>
-<tr>
-<td><code>fromMacro()</code></td>
-<td>Split input string using <code>_</code> (underscore character)</td>
-</tr>
-<tr>
-<td><code>fromKebab()</code></td>
-<td>Split input string using <code>-</code> (dash character)</td>
-</tr>
-<tr>
-<td><code>fromTrain()</code></td>
-<td>Split input string using <code>-</code> (dash character)</td>
-</tr>
-<tr>
-<td><code>fromCobol()</code></td>
-<td>Split input string using <code>-</code> (dash character)</td>
-</tr>
-<tr>
-<td><code>fromLower()</code></td>
-<td>Split input string using <code>␣</code> (space character)</td>
-</tr>
-<tr>
-<td><code>fromUpper()</code></td>
-<td>Split input string using <code>␣</code> (space character)</td>
-</tr>
-<tr>
-<td><code>fromTitle()</code></td>
-<td>Split input string using <code>␣</code> (space character)</td>
-</tr>
-<tr>
-<td><code>fromSentence()</code></td>
-<td>Split input string using <code>␣</code> (space character)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="utility-methods">Utility methods</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-<th>Output example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>toArray()</code></td>
-<td>Get array with detected words</td>
-<td><code>['my', 'name', 'is', 'bond']</code></td>
-</tr>
-</tbody>
-</table>
+<p>You can see a list of <a href="https://jawira.github.io/case-converter/api.html">all public methods</a>.</p>
 <h2 id="i18n">i18n</h2>
 <p>Fully compatible with non-english alphabets:</p>
 <pre><code class="php">// Spanish
@@ -340,6 +268,21 @@ $rus = new Convert('ОЧЕНЬ_ПРИЯТНО');
 echo $rus-&gt;toCamel();   // output: оченьПриятно
 </code></pre>
 
+<p>Full case mapping (only from <strong>PHP 7.3</strong>):</p>
+<pre><code class="php">// German
+$ger = new Convert('Straße');
+echo $ger-&gt;toUpper();    // output: STRASSE
+
+// Turkish (requires appropriate locale) 
+$tur = new Convert('istambul');     
+echo $tur-&gt;toTrain(); // output: İstanbul
+</code></pre>
+
+<p>Learn more about <a href="https://jawira.github.io/case-converter/known-issues.html#full-case-mapping">Full Case-Mapping</a>.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>$ composer require jawira/case-converter
+</code></pre>
+
 <h2 id="documentation">Documentation</h2>
 <p><a href="https://jawira.github.io/case-converter/">https://jawira.github.io/case-converter/</a></p>
 <h2 id="license">License</h2>
@@ -352,7 +295,7 @@ echo $rus-&gt;toCamel();   // output: оченьПриятно
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="api.html" class="btn btn-neutral float-right" title="Api">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -382,7 +325,7 @@ echo $rus-&gt;toCamel();   // output: оченьПриятно
       
       
       
-        <span style="margin-left: 15px"><a href="contributing.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="api.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -395,5 +338,5 @@ echo $rus-&gt;toCamel();   // output: оченьПриятно
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-30 21:07:01
+Build Date UTC : 2019-07-12 17:10:20
 -->

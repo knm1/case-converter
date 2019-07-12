@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jawira Portugal">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Detection algorithm - Case Converter</title>
+  <title>Naming conventions - Case Converter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Detection algorithm";
-    var mkdocs_page_input_path = "detection-algorithm.md";
+    var mkdocs_page_name = "Naming conventions";
+    var mkdocs_page_input_path = "naming-conventions.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -68,15 +68,9 @@
     <a class="" href="contributing.html">Contributing</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="detection-algorithm.html">Detection algorithm</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#detection-algorithm">Detection algorithm</a></li>
-    
-
-    </ul>
+    <a class="" href="detection-algorithm.html">Detection algorithm</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -99,9 +93,21 @@
     <a class="" href="license.html">License</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="naming-conventions.html">Naming conventions</a>
+    <a class="current" href="naming-conventions.html">Naming conventions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#naming-conventions">Naming conventions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#resources">Resources</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -126,7 +132,7 @@
     
       
     
-    <li>Detection algorithm</li>
+    <li>Naming conventions</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -136,19 +142,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="detection-algorithm">Detection algorithm</h1>
-<p>When <code>\Jawira\CaseConverter\Convert</code> class is instantiated, the input string 
-is analysed to detect the words in it.  </p>
-<p>This is also the algorithm used by <code>Convert::fromAuto</code> method.</p>
-<p><img alt="Detection algorithm" src="detection-algorithm.png" title="Detection algorithm" /></p>
-<ol>
-<li>If input string contains <code>_</code> (underscore character), then <code>_</code> is used to split string.</li>
-<li>If input string contains <code>-</code> (dash character), then <code>-</code> is used to split string. </li>
-<li>If input string contains <code>␣</code> (space character), then <code>␣</code> is used to split string. </li>
-<li>If input string contains uppercase characters only, then the input string is
-considered to be a single word.</li>
-<li>Finally, uppercase characters are used to split string.</li>
-</ol>
+                <h1 id="naming-conventions">Naming conventions</h1>
+<p>I will explain all about naming conventions here, not ready yet.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://dev.to/prahladyeri/underscores-camelcasing-and-pascalcasing-the-three-naming-conventions-every-programmer-should-be-aware-of-3aed">https://dev.to/prahladyeri/underscores-camelcasing-and-pascalcasing-the-three-naming-conventions-every-programmer-should-be-aware-of-3aed</a></li>
+</ul>
               
             </div>
           </div>
@@ -156,10 +155,8 @@ considered to be a single word.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dev.html" class="btn btn-neutral float-right" title="Dev">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="contributing.html" class="btn btn-neutral" title="Contributing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral" title="License"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -187,10 +184,8 @@ considered to be a single word.</li>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="contributing.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="license.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="dev.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
