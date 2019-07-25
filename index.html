@@ -67,6 +67,8 @@
         
             <li><a class="toctree-l3" href="#license">License</a></li>
         
+            <li><a class="toctree-l3" href="#my-other-packages">My other packages</a></li>
+        
         </ul>
     
 
@@ -76,6 +78,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="api.html">Api</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="case-mapping.html">Case mapping</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -268,17 +275,8 @@ $rus = new Convert('ОЧЕНЬ_ПРИЯТНО');
 echo $rus-&gt;toCamel();   // output: оченьПриятно
 </code></pre>
 
-<p>Full case mapping (only from <strong>PHP 7.3</strong>):</p>
-<pre><code class="php">// German
-$ger = new Convert('Straße');
-echo $ger-&gt;toUpper();    // output: STRASSE
-
-// Turkish (requires appropriate locale) 
-$tur = new Convert('istambul');     
-echo $tur-&gt;toTrain(); // output: İstanbul
-</code></pre>
-
-<p>Learn more about <a href="https://jawira.github.io/case-converter/known-issues.html#full-case-mapping">Full Case-Mapping</a>.</p>
+<p><code>case-converter</code> is compatible with <em>Simple Case-Mapping</em> and <em>Full 
+Case-Mapping</em>. <a href="https://jawira.github.io/case-converter/case-mapping.html">Learn more about Case-Mapping</a>.</p>
 <h2 id="installation">Installation</h2>
 <pre><code>$ composer require jawira/case-converter
 </code></pre>
@@ -288,6 +286,24 @@ echo $tur-&gt;toTrain(); // output: İstanbul
 <h2 id="license">License</h2>
 <p>This library is licensed under the <a href="https://jawira.github.io/case-converter/license.html">MIT LICENSE</a>.</p>
 <!--mkdocs: Do not use relative path for links and images-->
+
+<hr />
+<h2 id="my-other-packages">My other packages</h2>
+<dl>
+
+<dt><a href="https://packagist.org/packages/jawira/phing-visualizer">jawira/phing-visualizer</a> (library)</dt>
+<dd>Graphical representation of Phing's buildfile.</dd>
+
+<dt><a href="https://packagist.org/packages/jawira/plantuml">jawira/plantuml</a> (library)</dt>
+<dd>Provides PlantUML integration: plantuml executable and plantuml.jar</dd>
+
+<dt><a href="https://packagist.org/packages/jawira/plantuml-encoding">jawira/plantuml-encoding</a> (library)</dt>
+<dd>PlantUML encoding functions.</dd>
+
+<dt><a href="https://packagist.org/packages/jawira/process-maker">jawira/process-maker</a> (project)</dt>
+<dd>Easily install and try ProcessMaker using Docker Compose.</dd>
+
+</dl>
               
             </div>
           </div>
@@ -323,6 +339,8 @@ echo $tur-&gt;toTrain(); // output: İstanbul
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+          <a href="https://github.com/jawira/case-converter/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
       
       
         <span style="margin-left: 15px"><a href="api.html" style="color: #fcfcfc">Next &raquo;</a></span>
@@ -338,5 +356,5 @@ echo $tur-&gt;toTrain(); // output: İstanbul
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-07-12 17:10:20
+Build Date UTC : 2019-07-25 18:35:59
 -->

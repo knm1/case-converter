@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jawira Portugal">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>License - Case Converter</title>
+  <title>Case mapping - Case Converter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "License";
-    var mkdocs_page_input_path = "license.md";
+    var mkdocs_page_name = "Case mapping";
+    var mkdocs_page_input_path = "case-mapping.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -58,9 +58,27 @@
     <a class="" href="api.html">Api</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="case-mapping.html">Case mapping</a>
+    <a class="current" href="case-mapping.html">Case mapping</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#case-mapping">Case-Mapping</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#introduction">Introduction</a></li>
+        
+            <li><a class="toctree-l3" href="#forcing-single-case-mapping">Forcing Single Case-Mapping</a></li>
+        
+            <li><a class="toctree-l3" href="#technical-details">Technical details</a></li>
+        
+            <li><a class="toctree-l3" href="#sources">Sources</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -93,15 +111,9 @@
     <a class="" href="known-issues.html">Known issues</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="license.html">License</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#the-mit-license-mit">The MIT License (MIT)</a></li>
-    
-
-    </ul>
+    <a class="" href="license.html">License</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -131,7 +143,7 @@
     
       
     
-    <li>License</li>
+    <li>Case mapping</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -141,23 +153,75 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="the-mit-license-mit">The MIT License (MIT)</h1>
-<p>Copyright © 2015 Jawira Portugal</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
+                <h1 id="case-mapping">Case-Mapping</h1>
+<h2 id="introduction">Introduction</h2>
+<blockquote>
+<p>Case mapping or case conversion is a process whereby strings are converted to 
+a particular form—uppercase, lowercase, or titlecase—possibly for display to 
+the user. </p>
+</blockquote>
+<p>PHP always performed <em>Single Case-Mapping</em>, this is map one-to-one character 
+mapping. For example, one <em>lower case</em> character is converter to one <em>upper 
+case</em> character.</p>
+<p>PHP 7.3 introduced <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">Full Case-Mapping</a>, you can have one-to-many character 
+mapping. In practice this means than you can have different results depending 
+on your PHP version.</p>
+<pre><code class="php">$german = new Convert('Straße');
+
+echo $german-&gt;toUpper();
+// Produces STRAßE on PHP 7.2
+// Produces STRASSE on PHP 7.3
+</code></pre>
+
+<p>Please note that <em>Full Case-Mapping</em> is locale dependent:</p>
+<pre><code class="php">// Turkish (requires appropriate locale)
+$tur = new Convert('istambul');     
+echo $tur-&gt;toTrain();   // output: İstanbul
+</code></pre>
+
+<h2 id="forcing-single-case-mapping">Forcing <em>Single Case-Mapping</em></h2>
+<p><em>Full Case-Mapping</em> (only from <strong>PHP 7.3</strong>):</p>
+<pre><code class="php">// German
+$ger = new Convert('Straße');
+echo $ger-&gt;toUpper();    // output: STRASSE
+</code></pre>
+
+<p>To force <em>Single Case-Mapping</em> you have to call <code>-&gt;forceSimpleCaseMapping()</code>:</p>
+<pre><code class="php">// German
+$ger = new Convert('Straße');
+$ger-&gt;forceSimpleCaseMapping();
+echo $ger-&gt;toUpper();    // output: STRASSE
+</code></pre>
+
+<p>Please note <code>-&gt;forceSimpleCaseMapping()</code> has no effect on <em>PHP 7.1</em> and <em>PHP 
+7.2</em> as they already perform <em>Single Case-Mapping</em>.</p>
+<h2 id="technical-details">Technical details</h2>
+<p>Internally <code>Case-Converter</code> uses <a href="https://www.php.net/manual/en/function.mb-convert-case.php">mb_convert_case()</a>, this function uses the 
+following constants:</p>
+<ul>
+<li>MB_CASE_LOWER</li>
+<li>MB_CASE_TITLE</li>
+<li>MB_CASE_UPPER</li>
+</ul>
+<p>The problem is that, Before <em>PHP 7.3</em>, these constants perform simple 
+case-mapping and after <em>PHP 7.3</em> perform full case-mapping.</p>
+<p>If you want to maintain the old functionality after <em>PHP 7.3</em> you have to call 
+<code>-&gt;forceSimpleCaseMapping()</code>:</p>
+<pre><code class="php">// German
+$ger = new Convert('Straße');
+$ger-&gt;forceSimpleCaseMapping();
+echo $ger-&gt;toUpper();    // output: STRASSE
+</code></pre>
+
+<hr />
+<p>IMHO this is a <em>breaking change</em>, PHP people should have keep untouched old 
+constants and create new ones for <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">Full Case-Mapping</a>, for example: 
+<code>MB_CASE_LOWER_FULL</code>, <code>MB_CASE_TITLE_FULL</code>, and <code>MB_CASE_UPPER_FULL</code> (please 
+note these variables do not exist). </p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>https://unicode.org/faq/casemap_charprop.html</li>
+</ul>
               
             </div>
           </div>
@@ -165,10 +229,10 @@ SOFTWARE.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="naming-conventions.html" class="btn btn-neutral float-right" title="Naming conventions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="known-issues.html" class="btn btn-neutral" title="Known issues"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral" title="Api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -198,10 +262,10 @@ SOFTWARE.</p>
           <a href="https://github.com/jawira/case-converter/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="known-issues.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="api.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="naming-conventions.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="changelog.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

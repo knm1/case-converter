@@ -60,6 +60,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="case-mapping.html">Case mapping</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="changelog.html">Changelog</a>
 	    </li>
           
@@ -90,6 +95,8 @@
             <li><a class="toctree-l3" href="#basic-usage">Basic usage</a></li>
         
             <li><a class="toctree-l3" href="#explicit-case-detection">Explicit case detection</a></li>
+        
+            <li><a class="toctree-l3" href="#force-simple-case-mapping">Force Simple Case-Mapping</a></li>
         
         </ul>
     
@@ -145,6 +152,8 @@
             <div class="section">
               
                 <h1 id="examples">Examples</h1>
+<p>To use <strong>Case Converter</strong> you have to instantiate <code>Convert</code> class, then you
+should call <code>to*()</code> methods.</p>
 <h2 id="basic-usage">Basic usage</h2>
 <p>Code:</p>
 <pre><code class="php">&lt;?php declare(strict_types=1);
@@ -167,7 +176,8 @@ the_terminator
 </code></pre>
 
 <h2 id="explicit-case-detection">Explicit case detection</h2>
-<p>Code:</p>
+<p>In some edge cases you have to explicitly set the format of input string to have 
+the desired output:  </p>
 <pre><code class="php">&lt;?php declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
@@ -176,27 +186,35 @@ use Jawira\CaseConverter\Convert;
 
 $agency = new Convert('FBI');
 
-echo $agency-&gt;fromAda()
-            -&gt;toCobol() . PHP_EOL;   // output: FBI
-echo $agency-&gt;toSnake() . PHP_EOL;   // output: fbi
+$agency-&gt;fromAda();
+echo $agency-&gt;toCobol();   // output: FBI
+echo $agency-&gt;toSnake();   // output: fbi
 
-echo $agency-&gt;fromCamel()
-            -&gt;toCobol() . PHP_EOL;   // output: F-B-I
-echo $agency-&gt;toSnake() . PHP_EOL;   // output: f_b_i
+$agency-&gt;fromCamel();
+echo $agency-&gt;toCobol();   // output: F-B-I
+echo $agency-&gt;toSnake();   // output: f_b_i
 
-echo $agency-&gt;fromAuto()
-            -&gt;toCobol() . PHP_EOL;   // output: FBI
-echo $agency-&gt;toSnake() . PHP_EOL;   // output: fbi
+$agency-&gt;fromAuto();
+echo $agency-&gt;toCobol();   // output: FBI
+echo $agency-&gt;toSnake();   // output: fbi
 </code></pre>
 
-<p>Output:</p>
-<pre><code>FBI
-fbi
-F-B-I
-f_b_i
-FBI
-fbi
+<h2 id="force-simple-case-mapping">Force <em>Simple Case-Mapping</em></h2>
+<p>You can still use <em>Simple Case-Mapping</em> even if you are using PHP 7.3 or newer:</p>
+<pre><code class="php">&lt;?php declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Jawira\CaseConverter\Convert;
+
+$robot = new Convert('Straße');
+
+$robot-&gt;forceSimpleCaseMapping();
+echo $robot-&gt;toMacro();     // output: STRAßE
+echo $robot-&gt;toCobol();     // output: STRAßE
 </code></pre>
+
+<p><a href="https://jawira.github.io/case-converter/case-mapping.html">Learn more about Case-Mapping</a>. </p>
               
             </div>
           </div>
@@ -233,6 +251,8 @@ fbi
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/jawira/case-converter/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="dev.html" style="color: #fcfcfc;">&laquo; Previous</a></span>

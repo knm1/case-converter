@@ -60,6 +60,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="case-mapping.html">Case mapping</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="changelog.html">Changelog</a>
 	    </li>
           
@@ -92,9 +97,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#number-handling">Number handling</a></li>
-        
-            <li><a class="toctree-l3" href="#full-case-mapping">Full case-mapping</a></li>
+            <li><a class="toctree-l3" href="#number-is-not-a-word">Number is not a word</a></li>
         
         </ul>
     
@@ -145,39 +148,13 @@
             <div class="section">
               
                 <h1 id="known-issues">Known issues</h1>
-<h2 id="number-handling">Number handling</h2>
+<h2 id="number-is-not-a-word">Number is not a word</h2>
 <p>When using <code>case-converter</code> you cannot use a number as separator. In practice 
-this means that a number is not considered as a word: </p>
-<p><img alt="Phing targets" src="number-problem.png" title="Phing targets" /></p>
+this means that a number is not considered as a word:</p>
+<p><img alt="Phing targets" src="images/number-problem.png" title="Phing targets" /></p>
 <p>As shown in the previous example, there is no way to go back to the original 
 input string (i.e. <code>hello-8-world</code>), in <em>kebab case</em> this sting is written as 
-<code>hello8-world</code>.  </p>
-<h2 id="full-case-mapping">Full case-mapping</h2>
-<p>PHP 7.3 introduced <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">Full Case-Mapping</a>, in practice this means than you can 
-have different results depending on your PHP version.</p>
-<pre><code class="php">$german = new Convert('Straße');
-
-echo $german-&gt;toUpper();
-// Produces STRAßE on PHP 7.2
-// Produces STRASSE on PHP 7.3
-</code></pre>
-
-<p>Internally <code>Case-Converter</code> uses <a href="https://www.php.net/manual/en/function.mb-convert-case.php">mb_convert_case()</a>, this function uses the 
-following constants:</p>
-<ul>
-<li>MB_CASE_LOWER</li>
-<li>MB_CASE_TITLE</li>
-<li>MB_CASE_UPPER</li>
-</ul>
-<p>The problem is that, Before <em>PHP 7.3</em>, these constants perform simple 
-case-mapping and after <em>PHP 7.3</em> perform full case-mapping.</p>
-<p>If you want to maintain the old functionality after <em>PHP 7.3</em>, then you have to 
-use <code>MB_CASE_LOWER_SIMPLE</code>, <code>MB_CASE_UPPER_SIMPLE</code>, and <code>MB_CASE_TITLE_SIMPLE</code>. 
-Of course these variables doesnt exist yet before <em>PHP 7.3</em>.</p>
-<p>IMHO this is a <em>breaking change</em>, PHP people should have keep untouched old 
-constants and create new ones for <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">full case-mapping</a>, for example: 
-<code>MB_CASE_LOWER_FULL</code>, <code>MB_CASE_TITLE_FULL</code>, and <code>MB_CASE_UPPER_FULL</code> (please 
-note these variables do not exist). </p>
+<code>hello8-world</code>.</p>
               
             </div>
           </div>
@@ -214,6 +191,8 @@ note these variables do not exist). </p>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/jawira/case-converter/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="examples.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
