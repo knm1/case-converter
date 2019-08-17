@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jawira Portugal">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Dev - Case Converter</title>
+  <title>Using the factory - Case Converter</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Dev";
-    var mkdocs_page_input_path = "dev.md";
+    var mkdocs_page_name = "Using the factory";
+    var mkdocs_page_input_path = "using-the-factory.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -78,27 +78,9 @@
     <a class="" href="detection-algorithm.html">Detection algorithm</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="dev.html">Dev</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#development">Development</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#phing-targets">Phing targets</a></li>
-        
-            <li><a class="toctree-l3" href="#dev-requirements">Dev requirements</a></li>
-        
-            <li><a class="toctree-l3" href="#using-phing-behind-a-proxy">Using Phing behind a proxy</a></li>
-        
-            <li><a class="toctree-l3" href="#conventions">Conventions</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="dev.html">Dev</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -121,9 +103,15 @@
     <a class="" href="naming-conventions.html">Naming conventions</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="using-the-factory.html">Using the factory</a>
+    <a class="current" href="using-the-factory.html">Using the factory</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#using-the-factory">Using the factory</a></li>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -148,7 +136,7 @@
     
       
     
-    <li>Dev</li>
+    <li>Using the factory</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -158,30 +146,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="development">Development</h1>
-<h2 id="phing-targets">Phing targets</h2>
-<p><a href="images/build.png"><img alt="Phing targets" src="images/build.png" title="Phing targets" /></a></p>
+                <h1 id="using-the-factory">Using the factory</h1>
+<p>Instead of using <code>new Convert();</code> you can use the convenience method from 
+<code>CaseConverter</code> class.</p>
+<p>In concrete, you have to call <code>\Jawira\CaseConverter\CaseConverter::convert</code> to 
+create <code>Convert</code> objects.</p>
+<p>Here an example:</p>
+<pre><code class="php">&lt;?php
+namespace My\App;
+use Jawira\CaseConverter\CaseConverterInterface;
+
+class MySuperNameCreator
+{
+    protected $cc;
+
+    public function __construct(CaseConverterInterface $cc)
+    {
+        $this-&gt;cc = $cc;
+    }
+
+    public function variableName(string $slug): string
+    {
+        // `-&gt;convert()` returns a `Convert` object.
+        $myConvert = $this-&gt;cc-&gt;convert($slug);
+        return $myConvert-&gt;toCamel();
+    }
+
+    public function constantName(string $slug): string
+    {
+        // Of course you can also chain everything.
+        return $this-&gt;cc-&gt;convert($slug)-&gt;fromKebab()-&gt;toMacro();
+    }
+}
+</code></pre>
+
+<p>Please note that an interface -<code>CaseConverterInterface</code>- is also provided.</p>
+<p>Using <code>\Jawira\CaseConverter\CaseConverter::convert</code> is preferred because:</p>
 <ul>
-<li><code>$ phing setup</code>: Prepare project for development.</li>
-<li><code>$ phing qa</code>: Run quality tests, use this before every commit.</li>
-<li><code>$ phing refresh</code>: Update generated files (changelog, images, etc).</li>
-</ul>
-<h2 id="dev-requirements">Dev requirements</h2>
-<p>To use Phing tasks you need to previously install:</p>
-<ul>
-<li><a href="https://phar.io/">Phive</a></li>
-<li><a href="https://www.mkdocs.org/#installation">mkdocs</a></li>
-</ul>
-<h2 id="using-phing-behind-a-proxy">Using Phing behind a proxy</h2>
-<p>If you are developing behind a proxy, you have to set the environment 
-variable <code>http_proxy</code>. This variable is imported in buildfile.</p>
-<h2 id="conventions">Conventions</h2>
-<p>This project adheres to:</p>
-<ul>
-<li><a href="https://github.com/petervanderdoes/gitflow-avh">git-flow</a></li>
-<li><a href="http://semver.org/">Semantic Versioning</a></li>
-<li><a href="http://keepachangelog.com/en/1.0.0/">Keep a changelog</a></li>
-<li><a href="https://github.com/php-pds/skeleton">pds/skeleton</a></li>
+<li>Usually the <code>new</code> operator is considered harmful.</li>
+<li>You can easily mock dependencies when writing tests.</li>
+<li><a href="https://github.com/jawira/case-converter/issues/40">It's SOLID</a></li>
 </ul>
               
             </div>
@@ -190,10 +194,8 @@ variable <code>http_proxy</code>. This variable is imported in buildfile.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="examples.html" class="btn btn-neutral float-right" title="Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="detection-algorithm.html" class="btn btn-neutral" title="Detection algorithm"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="naming-conventions.html" class="btn btn-neutral" title="Naming conventions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -223,10 +225,8 @@ variable <code>http_proxy</code>. This variable is imported in buildfile.</p>
           <a href="https://github.com/jawira/case-converter/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="detection-algorithm.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="naming-conventions.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="examples.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

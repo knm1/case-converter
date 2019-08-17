@@ -69,7 +69,7 @@
         
             <li><a class="toctree-l3" href="#introduction">Introduction</a></li>
         
-            <li><a class="toctree-l3" href="#forcing-single-case-mapping">Forcing Single Case-Mapping</a></li>
+            <li><a class="toctree-l3" href="#forcing-simple-case-mapping">Forcing Simple Case-Mapping</a></li>
         
             <li><a class="toctree-l3" href="#technical-details">Technical details</a></li>
         
@@ -121,6 +121,11 @@
     <a class="" href="naming-conventions.html">Naming conventions</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="using-the-factory.html">Using the factory</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -160,7 +165,7 @@
 a particular form—uppercase, lowercase, or titlecase—possibly for display to 
 the user. </p>
 </blockquote>
-<p>PHP always performed <em>Single Case-Mapping</em>, this is map one-to-one character 
+<p>PHP always performed <em>Simple Case-Mapping</em>, this is map one-to-one character 
 mapping. For example, one <em>lower case</em> character is converter to one <em>upper 
 case</em> character.</p>
 <p>PHP 7.3 introduced <a href="https://www.php.net/manual/en/migration73.new-features.php#migration73.new-features.mbstring.case-mapping-folding">Full Case-Mapping</a>, you can have one-to-many character 
@@ -179,14 +184,14 @@ $tur = new Convert('istambul');
 echo $tur-&gt;toTrain();   // output: İstanbul
 </code></pre>
 
-<h2 id="forcing-single-case-mapping">Forcing <em>Single Case-Mapping</em></h2>
+<h2 id="forcing-simple-case-mapping">Forcing <em>Simple Case-Mapping</em></h2>
 <p><em>Full Case-Mapping</em> (only from <strong>PHP 7.3</strong>):</p>
 <pre><code class="php">// German
 $ger = new Convert('Straße');
 echo $ger-&gt;toUpper();    // output: STRASSE
 </code></pre>
 
-<p>To force <em>Single Case-Mapping</em> you have to call <code>-&gt;forceSimpleCaseMapping()</code>:</p>
+<p>To force <em>Simple Case-Mapping</em> you have to call <code>-&gt;forceSimpleCaseMapping()</code>:</p>
 <pre><code class="php">// German
 $ger = new Convert('Straße');
 $ger-&gt;forceSimpleCaseMapping();
@@ -194,7 +199,7 @@ echo $ger-&gt;toUpper();    // output: STRASSE
 </code></pre>
 
 <p>Please note <code>-&gt;forceSimpleCaseMapping()</code> has no effect on <em>PHP 7.1</em> and <em>PHP 
-7.2</em> as they already perform <em>Single Case-Mapping</em>.</p>
+7.2</em> as they already perform <em>Simple Case-Mapping</em>.</p>
 <h2 id="technical-details">Technical details</h2>
 <p>Internally <code>Case-Converter</code> uses <a href="https://www.php.net/manual/en/function.mb-convert-case.php">mb_convert_case()</a>, this function uses the 
 following constants:</p>

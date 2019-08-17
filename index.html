@@ -65,6 +65,8 @@
         
             <li><a class="toctree-l3" href="#documentation">Documentation</a></li>
         
+            <li><a class="toctree-l3" href="#contributing">Contributing</a></li>
+        
             <li><a class="toctree-l3" href="#license">License</a></li>
         
             <li><a class="toctree-l3" href="#my-other-packages">My other packages</a></li>
@@ -123,6 +125,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="naming-conventions.html">Naming conventions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="using-the-factory.html">Using the factory</a>
 	    </li>
           
         </ul>
@@ -250,16 +257,21 @@
 <a href="https://github.com/php-pds/skeleton"><img alt="PDS Skeleton" src="https://img.shields.io/badge/pds-skeleton-blue.svg" /></a>
 <a href="https://huboard.com/jawira/case-converter"><img alt="Issues" src="https://img.shields.io/github/issues/jawira/case-converter.svg?label=HuBoard&amp;color=694DC2" /></a></p>
 <h2 id="usage">Usage</h2>
+<p>Input string (i.e. <em>john-connor</em>) format is going to be 
+<a href="https://jawira.github.io/case-converter/detection-algorithm.html">detected automatically</a>. Here's an example:</p>
 <pre><code class="php">use Jawira\CaseConverter\Convert;
 
 $hero = new Convert('john-connor');
 
 echo $hero-&gt;toCamel();   // output: johnConnor
-echo $hero-&gt;toSnake();   // output: john_connor
 </code></pre>
 
-<p>Note: Input string (i.e. <em>john-connor</em>) format is going to be detected automatically.</p>
-<p>You can see a list of <a href="https://jawira.github.io/case-converter/api.html">all public methods</a>.</p>
+<p>Of course you can explicitly set the format of input string:</p>
+<pre><code class="php">echo $hero-&gt;fromKebab()-&gt;toSnake();   // output: john_connor
+</code></pre>
+
+<p>You can also use the <a href="https://jawira.github.io/case-converter/using-the-factory.html">provided factory</a> to instantiate <code>Convert</code> class.
+A list of <a href="https://jawira.github.io/case-converter/api.html">all public methods</a> is also available.</p>
 <h2 id="i18n">i18n</h2>
 <p>Fully compatible with non-english alphabets:</p>
 <pre><code class="php">// Spanish
@@ -283,6 +295,8 @@ Case-Mapping</em>. <a href="https://jawira.github.io/case-converter/case-mapping
 
 <h2 id="documentation">Documentation</h2>
 <p><a href="https://jawira.github.io/case-converter/">https://jawira.github.io/case-converter/</a></p>
+<h2 id="contributing">Contributing</h2>
+<p>If you liked this project, ⭐ <a href="https://github.com/jawira/case-converter/">star it on GitHub</a>.</p>
 <h2 id="license">License</h2>
 <p>This library is licensed under the <a href="https://jawira.github.io/case-converter/license.html">MIT LICENSE</a>.</p>
 <!--mkdocs: Do not use relative path for links and images-->
@@ -356,5 +370,5 @@ Case-Mapping</em>. <a href="https://jawira.github.io/case-converter/case-mapping
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-07-25 18:35:59
+Build Date UTC : 2019-08-17 11:49:39
 -->
