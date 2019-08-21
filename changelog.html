@@ -1,220 +1,1716 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="author" content="Jawira Portugal">
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Changelog - Case Converter</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Changelog";
-    var mkdocs_page_input_path = "changelog.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="js/jquery-2.1.1.min.js" defer></script>
-  <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
 
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="icon icon-home"> Case Converter</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+        <meta name="author" content="Jawira Portugal">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Changelog - Case Converter documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#changelog" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="Case Converter documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="index.html">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="api.html">Api</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="case-mapping.html">Case mapping</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="changelog.html">Changelog</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#changelog">Changelog</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#unreleased">Unreleased</a></li>
-        
-            <li><a class="toctree-l3" href="#v321-2019-08-17">v3.2.1 - 2019-08-17</a></li>
-        
-            <li><a class="toctree-l3" href="#v320-2019-08-17">v3.2.0 - 2019-08-17</a></li>
-        
-            <li><a class="toctree-l3" href="#v310-2019-07-25">v3.1.0 - 2019-07-25</a></li>
-        
-            <li><a class="toctree-l3" href="#v300-2019-06-30">v3.0.0 - 2019-06-30</a></li>
-        
-            <li><a class="toctree-l3" href="#v230-2019-06-15">v2.3.0 - 2019-06-15</a></li>
-        
-            <li><a class="toctree-l3" href="#v220-2019-05-30">v2.2.0 - 2019-05-30</a></li>
-        
-            <li><a class="toctree-l3" href="#v210-2019-05-10">v2.1.0 - 2019-05-10</a></li>
-        
-            <li><a class="toctree-l3" href="#v204-2019-04-04">v2.0.4 - 2019-04-04</a></li>
-        
-            <li><a class="toctree-l3" href="#v203-2019-03-30">v2.0.3 - 2019-03-30</a></li>
-        
-            <li><a class="toctree-l3" href="#v202-2019-03-29">v2.0.2 - 2019-03-29</a></li>
-        
-            <li><a class="toctree-l3" href="#v201-2019-03-28">v2.0.1 - 2019-03-28</a></li>
-        
-            <li><a class="toctree-l3" href="#v200-2019-03-26">v2.0.0 - 2019-03-26</a></li>
-        
-            <li><a class="toctree-l3" href="#v120-2019-03-18">v1.2.0 - 2019-03-18</a></li>
-        
-            <li><a class="toctree-l3" href="#v117-2019-02-18">v1.1.7 - 2019-02-18</a></li>
-        
-            <li><a class="toctree-l3" href="#v116-2018-12-15">v1.1.6 - 2018-12-15</a></li>
-        
-            <li><a class="toctree-l3" href="#v115-2018-10-18">v1.1.5 - 2018-10-18</a></li>
-        
-            <li><a class="toctree-l3" href="#v114-2018-10-06">v1.1.4 - 2018-10-06</a></li>
-        
-            <li><a class="toctree-l3" href="#v113-2018-10-04">v1.1.3 - 2018-10-04</a></li>
-        
-            <li><a class="toctree-l3" href="#v112-2018-09-23">v1.1.2 - 2018-09-23</a></li>
-        
-            <li><a class="toctree-l3" href="#v111-2018-09-23">v1.1.1 - 2018-09-23</a></li>
-        
-            <li><a class="toctree-l3" href="#v110-2018-01-29">v1.1.0 - 2018-01-29</a></li>
-        
-            <li><a class="toctree-l3" href="#v101-2017-11-10">v1.0.1 - 2017-11-10</a></li>
-        
-            <li><a class="toctree-l3" href="#v100-2017-10-27">v1.0.0 - 2017-10-27</a></li>
-        
-            <li><a class="toctree-l3" href="#v000-2017-10-26">[v0.0.0] - 2017-10-26</a></li>
-        
-        </ul>
-    
-
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="contributing.html">Contributing</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="detection-algorithm.html">Detection algorithm</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="dev.html">Dev</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="examples.html">Examples</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="known-issues.html">Known issues</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="license.html">License</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="naming-conventions.html">Naming conventions</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="using-the-factory.html">Using the factory</a>
-	    </li>
-          
-        </ul>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Case Converter</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Changelog</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Case Converter documentation
+            </span>
+            <span class="md-header-nav__topic">
               
+                Changelog
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/jawira/case-converter/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="Case Converter documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Case Converter documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/jawira/case-converter/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="api.html" title="Api" class="md-nav__link">
+      Api
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="case-mapping.html" title="Case mapping" class="md-nav__link">
+      Case mapping
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Changelog
+      </label>
+    
+    <a href="changelog.html" title="Changelog" class="md-nav__link md-nav__link--active">
+      Changelog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unreleased" title="Unreleased" class="md-nav__link">
+    Unreleased
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v331-2019-08-21" title="v3.3.1 - 2019-08-21" class="md-nav__link">
+    v3.3.1 - 2019-08-21
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v330-2019-08-21" title="v3.3.0 - 2019-08-21" class="md-nav__link">
+    v3.3.0 - 2019-08-21
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v321-2019-08-17" title="v3.2.1 - 2019-08-17" class="md-nav__link">
+    v3.2.1 - 2019-08-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v320-2019-08-17" title="v3.2.0 - 2019-08-17" class="md-nav__link">
+    v3.2.0 - 2019-08-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v310-2019-07-25" title="v3.1.0 - 2019-07-25" class="md-nav__link">
+    v3.1.0 - 2019-07-25
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_2" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v300-2019-06-30" title="v3.0.0 - 2019-06-30" class="md-nav__link">
+    v3.0.0 - 2019-06-30
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v230-2019-06-15" title="v2.3.0 - 2019-06-15" class="md-nav__link">
+    v2.3.0 - 2019-06-15
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" title="Deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_1" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v220-2019-05-30" title="v2.2.0 - 2019-05-30" class="md-nav__link">
+    v2.2.0 - 2019-05-30
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v210-2019-05-10" title="v2.1.0 - 2019-05-10" class="md-nav__link">
+    v2.1.0 - 2019-05-10
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_5" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v204-2019-04-04" title="v2.0.4 - 2019-04-04" class="md-nav__link">
+    v2.0.4 - 2019-04-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v203-2019-03-30" title="v2.0.3 - 2019-03-30" class="md-nav__link">
+    v2.0.3 - 2019-03-30
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_6" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v202-2019-03-29" title="v2.0.2 - 2019-03-29" class="md-nav__link">
+    v2.0.2 - 2019-03-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_7" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v201-2019-03-28" title="v2.0.1 - 2019-03-28" class="md-nav__link">
+    v2.0.1 - 2019-03-28
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_4" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v200-2019-03-26" title="v2.0.0 - 2019-03-26" class="md-nav__link">
+    v2.0.0 - 2019-03-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_5" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v120-2019-03-18" title="v1.2.0 - 2019-03-18" class="md-nav__link">
+    v1.2.0 - 2019-03-18
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_8" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v117-2019-02-18" title="v1.1.7 - 2019-02-18" class="md-nav__link">
+    v1.1.7 - 2019-02-18
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_9" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_2" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v116-2018-12-15" title="v1.1.6 - 2018-12-15" class="md-nav__link">
+    v1.1.6 - 2018-12-15
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_3" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v115-2018-10-18" title="v1.1.5 - 2018-10-18" class="md-nav__link">
+    v1.1.5 - 2018-10-18
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_10" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_6" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_2" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v114-2018-10-06" title="v1.1.4 - 2018-10-06" class="md-nav__link">
+    v1.1.4 - 2018-10-06
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_4" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-2018-10-04" title="v1.1.3 - 2018-10-04" class="md-nav__link">
+    v1.1.3 - 2018-10-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_11" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_5" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v112-2018-09-23" title="v1.1.2 - 2018-09-23" class="md-nav__link">
+    v1.1.2 - 2018-09-23
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_12" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_6" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v111-2018-09-23" title="v1.1.1 - 2018-09-23" class="md-nav__link">
+    v1.1.1 - 2018-09-23
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_7" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-2018-01-29" title="v1.1.0 - 2018-01-29" class="md-nav__link">
+    v1.1.0 - 2018-01-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_13" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_8" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v101-2017-11-10" title="v1.0.1 - 2017-11-10" class="md-nav__link">
+    v1.0.1 - 2017-11-10
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_14" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_9" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v100-2017-10-27" title="v1.0.0 - 2017-10-27" class="md-nav__link">
+    v1.0.0 - 2017-10-27
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_7" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_3" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v000-2017-10-26" title="[v0.0.0] - 2017-10-26" class="md-nav__link">
+    [v0.0.0] - 2017-10-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_15" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_8" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_4" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="contributing.html" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="detection-algorithm.html" title="Detection algorithm" class="md-nav__link">
+      Detection algorithm
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="dev.html" title="Dev" class="md-nav__link">
+      Dev
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="examples.html" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="known-issues.html" title="Known issues" class="md-nav__link">
+      Known issues
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="license.html" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="naming-conventions.html" title="Naming conventions" class="md-nav__link">
+      Naming conventions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="using-the-factory.html" title="Using the factory" class="md-nav__link">
+      Using the factory
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unreleased" title="Unreleased" class="md-nav__link">
+    Unreleased
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v331-2019-08-21" title="v3.3.1 - 2019-08-21" class="md-nav__link">
+    v3.3.1 - 2019-08-21
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v330-2019-08-21" title="v3.3.0 - 2019-08-21" class="md-nav__link">
+    v3.3.0 - 2019-08-21
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v321-2019-08-17" title="v3.2.1 - 2019-08-17" class="md-nav__link">
+    v3.2.1 - 2019-08-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v320-2019-08-17" title="v3.2.0 - 2019-08-17" class="md-nav__link">
+    v3.2.0 - 2019-08-17
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v310-2019-07-25" title="v3.1.0 - 2019-07-25" class="md-nav__link">
+    v3.1.0 - 2019-07-25
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_2" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v300-2019-06-30" title="v3.0.0 - 2019-06-30" class="md-nav__link">
+    v3.0.0 - 2019-06-30
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v230-2019-06-15" title="v2.3.0 - 2019-06-15" class="md-nav__link">
+    v2.3.0 - 2019-06-15
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" title="Deprecated" class="md-nav__link">
+    Deprecated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_1" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v220-2019-05-30" title="v2.2.0 - 2019-05-30" class="md-nav__link">
+    v2.2.0 - 2019-05-30
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v210-2019-05-10" title="v2.1.0 - 2019-05-10" class="md-nav__link">
+    v2.1.0 - 2019-05-10
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_5" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v204-2019-04-04" title="v2.0.4 - 2019-04-04" class="md-nav__link">
+    v2.0.4 - 2019-04-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v203-2019-03-30" title="v2.0.3 - 2019-03-30" class="md-nav__link">
+    v2.0.3 - 2019-03-30
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_6" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v202-2019-03-29" title="v2.0.2 - 2019-03-29" class="md-nav__link">
+    v2.0.2 - 2019-03-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added_7" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v201-2019-03-28" title="v2.0.1 - 2019-03-28" class="md-nav__link">
+    v2.0.1 - 2019-03-28
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_4" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v200-2019-03-26" title="v2.0.0 - 2019-03-26" class="md-nav__link">
+    v2.0.0 - 2019-03-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_5" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v120-2019-03-18" title="v1.2.0 - 2019-03-18" class="md-nav__link">
+    v1.2.0 - 2019-03-18
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_8" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v117-2019-02-18" title="v1.1.7 - 2019-02-18" class="md-nav__link">
+    v1.1.7 - 2019-02-18
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_9" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_2" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v116-2018-12-15" title="v1.1.6 - 2018-12-15" class="md-nav__link">
+    v1.1.6 - 2018-12-15
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_3" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v115-2018-10-18" title="v1.1.5 - 2018-10-18" class="md-nav__link">
+    v1.1.5 - 2018-10-18
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_10" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_6" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_2" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v114-2018-10-06" title="v1.1.4 - 2018-10-06" class="md-nav__link">
+    v1.1.4 - 2018-10-06
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_4" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-2018-10-04" title="v1.1.3 - 2018-10-04" class="md-nav__link">
+    v1.1.3 - 2018-10-04
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_11" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_5" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v112-2018-09-23" title="v1.1.2 - 2018-09-23" class="md-nav__link">
+    v1.1.2 - 2018-09-23
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_12" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_6" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v111-2018-09-23" title="v1.1.1 - 2018-09-23" class="md-nav__link">
+    v1.1.1 - 2018-09-23
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed_7" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-2018-01-29" title="v1.1.0 - 2018-01-29" class="md-nav__link">
+    v1.1.0 - 2018-01-29
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_13" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_8" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v101-2017-11-10" title="v1.0.1 - 2017-11-10" class="md-nav__link">
+    v1.0.1 - 2017-11-10
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_14" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_9" title="Fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v100-2017-10-27" title="v1.0.0 - 2017-10-27" class="md-nav__link">
+    v1.0.0 - 2017-10-27
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changed_7" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_3" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v000-2017-10-26" title="[v0.0.0] - 2017-10-26" class="md-nav__link">
+    [v0.0.0] - 2017-10-26
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_15" title="Added" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_8" title="Changed" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_4" title="Removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
                 <h1 id="changelog">Changelog</h1>
 <p>All notable changes to this project will be documented in this file.</p>
 <h2 id="unreleased">Unreleased</h2>
+<h2 id="v331-2019-08-21">v3.3.1 - 2019-08-21</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Removed unwanted dependency</li>
+</ul>
+<h2 id="v330-2019-08-21"><a href="https://github.com/jawira/case-converter/compare/v3.2.1...v3.3.0">v3.3.0</a> - 2019-08-21</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li><a href="https://github.com/jawira/case-converter/pull/46">#46</a> Added new convention: Dot notation </li>
+</ul>
 <h2 id="v321-2019-08-17"><a href="https://github.com/jawira/case-converter/compare/v3.2.0...v3.2.1">v3.2.1</a> - 2019-08-17</h2>
 <h3 id="changed">Changed</h3>
 <ul>
 <li>Updated Readme file</li>
 </ul>
 <h2 id="v320-2019-08-17"><a href="https://github.com/jawira/case-converter/compare/v3.1.0...v3.2.0">v3.2.0</a> - 2019-08-17</h2>
-<h3 id="added">Added</h3>
+<h3 id="added_1">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/40">#40</a> Added Factory class and its interface.</li>
 </ul>
 <h2 id="v310-2019-07-25"><a href="https://github.com/jawira/case-converter/compare/v3.0.0...v3.1.0">v3.1.0</a> - 2019-07-25</h2>
-<h3 id="added_1">Added</h3>
+<h3 id="added_2">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/41">#41</a> Added <code>\Jawira\CaseConverter\Convert::getSource</code> method to retrieve 
 original input string.</li>
@@ -222,12 +1718,12 @@ original input string.</li>
 usage of <em>Single Case-Mapping</em> in <em>PHP 7.3</em> and newer. This method has no effect
 in <em>PHP 7.1</em> nor <em>PHP 7.2</em>.</li>
 </ul>
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed_1">Fixed</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/44">#44</a> Strings with <code>0</code> in it can be handled correctly. </li>
 </ul>
 <h2 id="v300-2019-06-30"><a href="https://github.com/jawira/case-converter/compare/v2.3.0...v3.0.0">v3.0.0</a> - 2019-06-30</h2>
-<h3 id="added_2">Added</h3>
+<h3 id="added_3">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/36">#36</a> Static site with documentation <a href="https://jawira.github.io/case-converter/build.png">https://jawira.github.io/case-converter/build.png</a></li>
 <li><a href="https://github.com/jawira/case-converter/pull/30">#30</a> Added functions to explicitly set the naming conventions of input 
@@ -258,13 +1754,13 @@ STRATEGY_UNDERSCORE, STRATEGY_UPPERCASE, ADA, CAMEL, COBOL, KEBAB, LOWER, MACRO,
 PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 </ul>
 <h2 id="v220-2019-05-30"><a href="https://github.com/jawira/case-converter/compare/v2.1.0...v2.2.0">v2.2.0</a> - 2019-05-30</h2>
-<h3 id="added_3">Added</h3>
+<h3 id="added_4">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/33">#33</a> Added support for space based naming conventions: Title case, Sentence 
  case, Upper case, and Lower case.</li>
 </ul>
 <h2 id="v210-2019-05-10"><a href="https://github.com/jawira/case-converter/compare/v2.0.4...v2.1.0">v2.1.0</a> - 2019-05-10</h2>
-<h3 id="added_4">Added</h3>
+<h3 id="added_5">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/26">#26</a> New method to get array with words extracted from original string 
 <code>\Jawira\CaseConverter\Convert::toArray</code></li>
@@ -278,7 +1774,7 @@ PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 <li><a href="https://github.com/jawira/case-converter/pull/29">#29</a> Adding PHPPackages badges</li>
 </ul>
 <h2 id="v203-2019-03-30"><a href="https://github.com/jawira/case-converter/compare/v2.0.2...v2.0.3">v2.0.3</a> - 2019-03-30</h2>
-<h3 id="added_5">Added</h3>
+<h3 id="added_6">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/22">#22</a> Code Climate integration</li>
 </ul>
@@ -287,7 +1783,7 @@ PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/24">#24</a> Re-writing PHPUnit tests</li>
 </ul>
-<h3 id="added_6">Added</h3>
+<h3 id="added_7">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/27">#27</a> Travis-ci integration</li>
 </ul>
@@ -304,31 +1800,31 @@ PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 <li><a href="https://github.com/jawira/case-converter/pull/21">#21</a> Behat tests have been adapted for new CaseConverter signatures</li>
 </ul>
 <h2 id="v120-2019-03-18"><a href="https://github.com/jawira/case-converter/compare/v1.1.7...v1.2.0">v1.2.0</a> - 2019-03-18</h2>
-<h3 id="added_7">Added</h3>
+<h3 id="added_8">Added</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/19">#19</a> Handling Kebab case</li>
 <li><a href="https://github.com/jawira/case-converter/pull/18">#18</a> Armenian behat tests</li>
 <li><a href="https://github.com/jawira/case-converter/pull/18">#18</a> Swedish behat tests</li>
 </ul>
 <h2 id="v117-2019-02-18"><a href="https://github.com/jawira/case-converter/compare/v1.1.6...v1.1.7">v1.1.7</a> - 2019-02-18</h2>
-<h3 id="added_8">Added</h3>
+<h3 id="added_9">Added</h3>
 <ul>
 <li>Waffle.io badge in README.md</li>
 <li><a href="https://github.com/jawira/case-converter/pull/16">#16</a> Use Phive to download Phar files</li>
 <li><a href="https://github.com/jawira/case-converter/pull/11">#11</a> Created <code>CaseConverterException</code></li>
 </ul>
-<h3 id="fixed_1">Fixed</h3>
+<h3 id="fixed_2">Fixed</h3>
 <ul>
 <li><a href="https://github.com/jawira/case-converter/pull/17">#17</a> Fixing PHPStan error</li>
 </ul>
 <h2 id="v116-2018-12-15"><a href="https://github.com/jawira/case-converter/compare/v1.1.5...v1.1.6">v1.1.6</a> - 2018-12-15</h2>
-<h3 id="fixed_2">Fixed</h3>
+<h3 id="fixed_3">Fixed</h3>
 <ul>
 <li>Phing uses <code>http_proxy</code> behind a proxy to download Behat, PHPUnit and
   Composer.</li>
 </ul>
 <h2 id="v115-2018-10-18"><a href="https://github.com/jawira/case-converter/compare/v1.1.4...v1.1.5">v1.1.5</a> - 2018-10-18</h2>
-<h3 id="added_9">Added</h3>
+<h3 id="added_10">Added</h3>
 <ul>
 <li>New Phing target for Behat tests</li>
 </ul>
@@ -342,51 +1838,51 @@ PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 <li>Behat was removed from <code>composer.json</code>, instead, <code>bin/behat</code> is used.</li>
 </ul>
 <h2 id="v114-2018-10-06"><a href="https://github.com/jawira/case-converter/compare/v1.1.3...v1.1.4">v1.1.4</a> - 2018-10-06</h2>
-<h3 id="fixed_3">Fixed</h3>
+<h3 id="fixed_4">Fixed</h3>
 <ul>
 <li>Fixed support for multilingual strings: spanish, greek, cyrillic, etc.</li>
 </ul>
 <h2 id="v113-2018-10-04"><a href="https://github.com/jawira/case-converter/compare/v1.1.2...v1.1.3">v1.1.3</a> - 2018-10-04</h2>
-<h3 id="added_10">Added</h3>
+<h3 id="added_11">Added</h3>
 <ul>
 <li>Added <code>pds/skeleton</code> badge in <a href="">README.md</a></li>
 <li>Added <code>pds/skeleton</code> as suggestion in <a href="">composer.json</a></li>
 <li>Added behat tests <a href="https://github.com/jawira/case-converter/pull/9">#9</a></li>
 </ul>
-<h3 id="fixed_4">Fixed</h3>
+<h3 id="fixed_5">Fixed</h3>
 <ul>
 <li>Fixed bug with invalid Pascal Case <a href="https://github.com/jawira/case-converter/pull/12">#12</a></li>
 </ul>
 <h2 id="v112-2018-09-23"><a href="https://github.com/jawira/case-converter/compare/v1.1.1...v1.1.2">v1.1.2</a> - 2018-09-23</h2>
-<h3 id="added_11">Added</h3>
+<h3 id="added_12">Added</h3>
 <ul>
 <li>Crated Phing visualisation <code>build.png</code></li>
 </ul>
-<h3 id="fixed_5">Fixed</h3>
-<ul>
-<li>Un-versioning <code>composer.lock</code></li>
-</ul>
-<h2 id="v111-2018-09-23"><a href="https://github.com/jawira/case-converter/compare/v1.1.0...v1.1.1">v1.1.1</a> - 2018-09-23</h2>
 <h3 id="fixed_6">Fixed</h3>
 <ul>
 <li>Un-versioning <code>composer.lock</code></li>
 </ul>
+<h2 id="v111-2018-09-23"><a href="https://github.com/jawira/case-converter/compare/v1.1.0...v1.1.1">v1.1.1</a> - 2018-09-23</h2>
+<h3 id="fixed_7">Fixed</h3>
+<ul>
+<li>Un-versioning <code>composer.lock</code></li>
+</ul>
 <h2 id="v110-2018-01-29"><a href="https://github.com/jawira/case-converter/compare/v1.0.1...v1.1.0">v1.1.0</a> - 2018-01-29</h2>
-<h3 id="added_12">Added</h3>
+<h3 id="added_13">Added</h3>
 <ul>
 <li>Build tools (Makefile &amp; Phing)</li>
 </ul>
-<h3 id="fixed_7">Fixed</h3>
+<h3 id="fixed_8">Fixed</h3>
 <ul>
 <li>Bug with spanish characters (<a href="https://github.com/jawira/case-converter/issues/6">issue #6</a>)</li>
 </ul>
 <h2 id="v101-2017-11-10"><a href="https://github.com/jawira/case-converter/compare/v1.0.0...v1.0.1">v1.0.1</a> - 2017-11-10</h2>
-<h3 id="added_13">Added</h3>
+<h3 id="added_14">Added</h3>
 <ul>
 <li>Unitary tests</li>
 <li>Unitary tests for spanish characters</li>
 </ul>
-<h3 id="fixed_8">Fixed</h3>
+<h3 id="fixed_9">Fixed</h3>
 <ul>
 <li>Bug with acronyms (<a href="https://github.com/jawira/case-converter/issues/5">issue #5</a>)</li>
 </ul>
@@ -400,7 +1896,7 @@ PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 <li>PHPUnit and pds/skeleton dependencies</li>
 </ul>
 <h2 id="v000-2017-10-26">[v0.0.0] - 2017-10-26</h2>
-<h3 id="added_14">Added</h3>
+<h3 id="added_15">Added</h3>
 <ul>
 <li>Composer support</li>
 </ul>
@@ -413,56 +1909,83 @@ PASCAL, SENTENCE, SNAKE, TITLE, TRAIN, UPPER.</li>
 <li>Deleted Convert::old_camelToSnake()</li>
 <li>Deleted Convert::old_snakeToCamel()</li>
 </ul>
+                
+                  
+                
               
-            </div>
+              
+                
+
+
+              
+            </article>
           </div>
-          <footer>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="case-mapping.html" class="btn btn-neutral" title="Case mapping"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="case-mapping.html" title="Case mapping" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Case mapping
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="contributing.html" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Contributing
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
   
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-      <p>The MIT License (MIT)</p>
-    
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            The MIT License (MIT)
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
   </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    
+      <script src="assets/javascripts/application.245445c6.js"></script>
       
-          <a href="https://github.com/jawira/case-converter/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       
-      
-        <span><a href="case-mapping.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="contributing.html" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme.js" defer></script>
-      <script src="search/main.js" defer></script>
-
-</body>
+    
+  </body>
 </html>
