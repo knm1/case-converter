@@ -392,6 +392,11 @@
                 
                 
                 <h1 id="using-the-factory">Using the factory</h1>
+<p>Besides <code>\Jawira\CaseConverter\Convert</code> you also have at your disposal:</p>
+<ul>
+<li><code>\Jawira\CaseConverter\CaseConverter</code></li>
+<li><code>\Jawira\CaseConverter\CaseConverterInterface</code></li>
+</ul>
 <p>Instead of using <code>new Convert();</code> you can use the convenience method from 
 <code>CaseConverter</code> class.</p>
 <p>In concrete, you have to call <code>\Jawira\CaseConverter\CaseConverter::convert</code> to 
@@ -426,7 +431,10 @@ create <code>Convert</code> objects.</p>
 </pre></div>
 
 
-<p>Please note that an interface -<code>CaseConverterInterface</code>- is also provided.</p>
+<p>Please note that an interface -<code>CaseConverterInterface</code>- is also provided. If 
+you are using <em>Symfony</em> you can use this interface with <a href="https://symfony.com/doc/current/service_container/autowiring.html">Symfony autowiring</a> 
+to automatically instantiate <code>CaseConverter</code>, otherwise if you are working in 
+a standalone project you should try <a href="http://php-di.org/#autowiring">php-di project</a>.</p>
 <p>Using <code>\Jawira\CaseConverter\CaseConverter::convert</code> is preferred because:</p>
 <ul>
 <li>Usually the <code>new</code> operator is considered harmful.</li>
