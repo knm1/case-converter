@@ -1,5 +1,5 @@
 {
-  "name": "jawira/case-converter",
+  "name": "knm1/case-converter",
   "type": "library",
   "description": "Convert strings between 13 naming conventions: Snake case, Camel case, Pascal case, Kebab case, Ada case, Train case, Cobol case, Macro case, Upper case, Lower case, Sentence case, Title case and Dot notation.",
   "keywords": [
@@ -27,7 +27,7 @@
     }
   ],
   "require": {
-    "php": "^7.1",
+    "php": ">=7.1",
     "ext-mbstring": "*"
   },
   "suggest": {
